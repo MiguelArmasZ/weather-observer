@@ -1,0 +1,13 @@
+@import './global/normalize';
+@import './global/variables';
+@import './global/mixins';
+@import './global/utilities';
+@import './global/reset';
+@import './global/animations';
+
+@import './components/home';
+@import './components/form';
+@import './components/btn-menu';
+@import './components/menu';
+
+@import './pages/city';

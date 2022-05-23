@@ -1,0 +1,36 @@
+.Home {
+  opacity: 0;
+  transition: opacity 0.5s;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.Home-bg {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Home-title {
+  width: min-content;
+  line-height: 1;
+  font-size: 5rem;
+  margin-top: 2rem;
+}
+
+.Home-tagline {
+  width: 20ch;
+  font-weight: bold;
+  color: $light;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

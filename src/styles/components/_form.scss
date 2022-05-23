@@ -1,0 +1,27 @@
+.Form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.Form-input {
+  padding: 1rem;
+  border-radius: $radius;
+  border: none;
+  margin-top: 1rem;
+  width: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: $white;
+}
+
+.Form-submit {
+  margin-top: 3rem;
+  padding: 1rem 3rem;
+  border-radius: $radius;
+  border: none;
+  text-transform: capitalize;
+  color: $white;
+  background: linear-gradient(45deg, $dark, $gold);
+}

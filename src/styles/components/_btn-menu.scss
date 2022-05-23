@@ -1,0 +1,35 @@
+.Btn-menu {
+  padding: 1rem;
+  height: 4.5rem;
+  width: 5rem;
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 1000;
+
+  &.active .Btn-line:nth-child(1) {
+    transform: rotate(40deg) translate(7px, 5px);
+  }
+  &.active .Btn-line:nth-child(2) {
+    opacity: 0;
+  }
+  &.active .Btn-line:nth-child(3) {
+    transform: rotate(-40deg) translate(10px, -9px);
+  }
+}
+
+.Btn-line {
+  height: 3px;
+  width: 100%;
+  background-color: $white;
+  border-radius: 5rem;
+  transition: all 0.5s;
+
+  &:nth-child(2) {
+    width: 80%;
+  }
+}
