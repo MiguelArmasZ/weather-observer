@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import { Home } from './components/Home'
+import { Home } from './pages/Home'
 import { Layout } from './components/Layout'
 import { City } from './pages/City'
 
@@ -14,7 +14,7 @@ export const Routing = () => {
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
-        <Route path='/' element={<Home />} />
+        <Route path='' element={<Home />} />
         <Route path='city' element={<City />} />
       </Route>
     </Routes>

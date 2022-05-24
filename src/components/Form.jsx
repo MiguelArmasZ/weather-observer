@@ -18,7 +18,7 @@ export const Form = () => {
         id='city'
         name='city'
         type='text'
-        placeholder='Roma'
+        placeholder='Paris'
         autoComplete='off'
         value={city.city}
         required

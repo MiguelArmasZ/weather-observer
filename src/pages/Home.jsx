@@ -1,26 +1,18 @@
 import React, { useEffect } from 'react'
-import { Form } from './Form'
-import { addFade } from '../helpers/addFade'
-import Hero from '../assets/hero.jpg'
+import { Form } from '../components/Form'
 
 export const Home = () => {
-  useEffect(() => {
-    addFade()
-  }, [])
+  useEffect(() => {}, [])
 
   return (
     <>
-      <img
-        className='Home-bg zoom zoom-1'
-        src={Hero}
-        alt='imagen de fondo'
-      />
       <section id='home' className='Home content'>
         <h1 className='Home-title'>The Weather Hunter</h1>
         <p className='Home-tagline'>
           mira el clima de cualquier ciudad del mundo
         </p>
         <Form />
+        <div className='sun'></div>
       </section>
     </>
   )

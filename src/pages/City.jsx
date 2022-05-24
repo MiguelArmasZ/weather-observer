@@ -3,7 +3,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/Icon'
-// import { Spinner } from '../components/Spinner'
+import { Spinner } from '../components/Spinner'
 import { conditionWeather } from '../data/conditionWeather'
 import { DataContext } from '../DataContext'
 import { useFetch } from '../hooks/useFetch'
@@ -13,6 +13,7 @@ import {
   faCloudRain,
   faWind
 } from '@fortawesome/free-solid-svg-icons'
+import { activeSpinner } from '../helpers/activeSpinner'
 
 export const City = () => {
   const { city } = useContext(DataContext)
@@ -48,6 +49,10 @@ export const City = () => {
     }
   }, [timeZone])
 
+  useEffect(() => {
+    activeSpinner()
+  }, [])
+
   const conditions = {
     bgLayout: () => (moment === 0 ? 'bg-night' : 'bg-day'),
     bgItems: () => (moment === 0 ? 'bg-dark-blue' : 'bg-sky-blue'),
@@ -60,14 +65,15 @@ export const City = () => {
   const { bgLayout, bgItems, dayMoment } = conditions
 
   return (
-    <main className={`layout fade City ${bgLayout()}`}>
+    <>
+      <div className={`bg ${bgLayout()}`}></div>
       {place.error ? (
         <div div className='City-mssg-error'>
           <p>Lo sentimos, no podemos encontrar esa ciudad</p>
           <Link to='/'>Volver a intentarlo</Link>
         </div>
       ) : (
-        <section className='content'>
+        <section className='fade'>
           <div className='City-title'>
             <h2 className='City-name'>{name}</h2>
             <h3 className='City-region'>
@@ -107,10 +113,11 @@ export const City = () => {
               </li>
             </ul>
           </div>
-
-          {/* <Spinner /> */}
+          <div className='spinner'>
+            <Spinner />
+          </div>
         </section>
       )}
-    </main>
+    </>
   )
 }

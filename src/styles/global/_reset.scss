@@ -15,6 +15,12 @@ body {
   line-height: 1.6;
   font-family: $base;
   color: $white;
+  width: 95%;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $black;
+  height: 100vh;
 }
 
 h1,

@@ -5,10 +5,10 @@ import { Menu } from './Menu'
 
 export const Layout = () => {
   return (
-    <>
+    <main className='layout'>
       <BtnMenu />
       <Menu />
       <Outlet />
-    </>
+    </main>
   )
 }

@@ -1,0 +1,17 @@
+.Home-title {
+  width: min-content;
+  line-height: 1;
+  font-size: 5rem;
+  padding-top: 3rem;
+  position: relative;
+  z-index: 100;
+}
+
+.Home-tagline {
+  width: 20ch;
+  font-weight: bold;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

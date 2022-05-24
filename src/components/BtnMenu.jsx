@@ -11,6 +11,7 @@ export const BtnMenu = () => {
   return (
     <>
       <div
+        id='btn-menu'
         className={`Btn-menu ${menu ? 'active' : ''}`}
         onClick={handleMenu}
       >
