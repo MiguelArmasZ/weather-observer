@@ -2,31 +2,10 @@
   position: relative;
 }
 
-.bg {
-  height: 100%;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.bg-day {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, $black, $sky-blue);
-}
-
-.bg-night {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, $black, $dark-blue);
-}
-
-.bg-sky-blue {
-  background-color: darken($sky-blue, 20);
-}
-
-.bg-dark-blue {
-  background-color: darken($dark-blue, 8);
+.heading {
+  padding-top: 5rem;
+  text-transform: capitalize;
+  font-size: 3rem;
 }
 
 .spinner {
@@ -70,12 +49,6 @@
   &.active::after {
     transform: scaleX(0);
   }
-
-  // &.active::before {
-  // }
-
-  // &.active::after {
-  // }
 }
 
 .lds-ellipsis {
@@ -83,4 +56,31 @@
   &.active {
     opacity: 0;
   }
+}
+
+.bg {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.bg-day {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, $black, $sky-blue);
+}
+
+.bg-night {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, $black, $dark-blue);
+}
+
+.bg-sky-blue {
+  background-color: darken($sky-blue, 20);
+}
+
+.bg-dark-blue {
+  background-color: darken($dark-blue, 8);
 }

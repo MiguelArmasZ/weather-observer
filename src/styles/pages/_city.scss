@@ -12,13 +12,49 @@
   font-weight: normal;
 }
 
+.City-favorite {
+  font-size: 3rem;
+  margin-top: 1rem;
+  transition: color 0.5s;
+
+  &.active {
+    color: $gold;
+  }
+
+  &::after {
+    content: 'ciudad añadida a favoritos';
+    display: block;
+    position: absolute;
+    font-size: 1.5rem;
+    width: 100%;
+    box-shadow: $shadow-1 $gold;
+    border-radius: $radius;
+    padding: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+    top: -10%;
+    background-color: rgba(229, 137, 10, 0.96);
+    font-weight: bold;
+    max-width: 30rem;
+    margin: auto;
+    left: 0;
+    right: 0;
+    color: $white;
+    z-index: 2000;
+  }
+
+  &.active::after {
+    animation: favorite 2s ease-in-out;
+  }
+}
+
 .City-temp {
   position: relative;
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70vh;
+  height: 71vh;
   flex-direction: column;
 
   h4 {
@@ -33,7 +69,7 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    box-shadow: 0 0 1rem inset;
+    box-shadow: $shadow-1;
 
     &::after {
       content: 'º';
@@ -66,7 +102,7 @@
   padding: 1rem 3rem;
   border-radius: $radius;
   font-weight: bold;
-  box-shadow: 0 0 1rem inset;
+  box-shadow: $shadow-1;
   text-align: center;
 }
 
@@ -80,7 +116,7 @@
 .City-info-item {
   padding: 1.5rem 2rem;
   border-radius: $radius;
-  box-shadow: 0 0 1rem inset $white;
+  box-shadow: $shadow-1 $white;
   display: flex;
   align-items: center;
   justify-content: space-around;

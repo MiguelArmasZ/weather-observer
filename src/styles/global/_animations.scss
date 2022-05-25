@@ -67,6 +67,19 @@
   }
 }
 
+@keyframes favorite {
+  0%,
+  100% {
+    top: -10%;
+  }
+  35% {
+    top: 5%;
+  }
+  75% {
+    top: 5%;
+  }
+}
+
 .sun {
   height: 5rem;
   width: 5rem;

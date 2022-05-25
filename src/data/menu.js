@@ -6,7 +6,7 @@ export const linksForNavbar = [
   },
   {
     delay: { '--delay': '2' },
-    to: '/',
+    to: '/favorites',
     text: 'favorites'
   },
   {

@@ -21,6 +21,7 @@ export const useForm = (initialValue) => {
     setCity(field)
     setField(initialValue)
     navigate('/city')
+    window.localStorage.setItem('city', JSON.stringify(field))
   }
 
   return [field, handleChange, handleSubmit]

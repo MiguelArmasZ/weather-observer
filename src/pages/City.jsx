@@ -1,25 +1,28 @@
 /* eslint-disable space-before-function-paren */
 /* eslint-disable multiline-ternary */
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { Spinner } from '../components/Spinner'
 import { conditionWeather } from '../data/conditionWeather'
-import { DataContext } from '../DataContext'
 import { useFetch } from '../hooks/useFetch'
 import {
   faTemperatureFull,
   faDroplet,
   faCloudRain,
-  faWind
+  faWind,
+  faStar
 } from '@fortawesome/free-solid-svg-icons'
 import { activeSpinner } from '../helpers/activeSpinner'
+import { addActiveClass } from '../helpers/addActiveClass'
+import { intlClock } from '../helpers/intlClock'
 
 export const City = () => {
-  const { city } = useContext(DataContext)
   const [time, setTime] = useState('')
 
-  const place = useFetch(city.city)
+  const { city } = JSON.parse(window.localStorage.getItem('city'))
+
+  const place = useFetch(city)
   const {
     country,
     region,
@@ -38,13 +41,7 @@ export const City = () => {
   useEffect(() => {
     if (timeZone) {
       setInterval(() => {
-        const time = new Date()
-          .toLocaleString('es-ES', { timeZone })
-          .split(',')
-          .slice(-1)
-          .join('')
-
-        setTime(time)
+        setTime(intlClock(timeZone))
       }, 1000)
     }
   }, [timeZone])
@@ -79,6 +76,14 @@ export const City = () => {
             <h3 className='City-region'>
               {region}, {country}
             </h3>
+            <span
+              onClick={() =>
+                addActiveClass('.City-favorite', 'active')
+              }
+              className='City-favorite'
+            >
+              <Icon icon={faStar} />
+            </span>
           </div>
 
           <div className='City-temp'>
@@ -108,7 +113,6 @@ export const City = () => {
               </li>
               <li className={`City-info-item ${bgItems()}`}>
                 <Icon icon={faWind} />
-
                 {`${wind} kph`}
               </li>
             </ul>
