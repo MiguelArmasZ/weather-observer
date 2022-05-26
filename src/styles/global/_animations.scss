@@ -100,7 +100,8 @@
   background-color: darkorange;
   border-radius: inherit;
   position: absolute;
-  animation: sunrise-before 3s ease;
+  animation: sunrise-before 5s ease;
+  animation-delay: 1s;
   top: -600%;
   z-index: -1;
 }
@@ -121,7 +122,7 @@
   width: 100vw;
   left: 0;
   position: fixed;
-  animation: sunrise-after 3s ease;
+  animation: sunrise-after 20s ease;
   z-index: -1;
   box-shadow: 0 0 25rem 30rem;
   color: $sky-blue;
@@ -131,11 +132,47 @@
   0% {
     box-shadow: 0 0 1rem 1rem $black;
   }
-  50% {
+  30% {
     color: darkorange;
   }
-  100% {
+  35% {
     box-shadow: 0 0 25rem 30rem;
+    color: rgb(93, 135, 162);
+  }
+  40% {
+  }
+  90% {
+    color: $dark-blue;
+  }
+  100% {
     color: $sky-blue;
+  }
+}
+
+.drop {
+  height: 0.8rem;
+  width: 1px;
+  background-color: $light;
+  position: fixed;
+  top: -150%;
+  animation: rain 5s linear 3;
+  opacity: 0;
+}
+
+@keyframes rain {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    top: 99%;
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+    top: -150%;
+  }
+  100% {
+    top: 99%;
+    opacity: 0;
   }
 }
