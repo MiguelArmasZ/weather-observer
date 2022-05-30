@@ -6,7 +6,11 @@ export const DataContext = createContext()
 export const DataProvider = ({ children }) => {
   const [menu, setMenu] = useState(false)
   const [city, setCity] = useState('')
-  const [currentCity, setCurrentCity] = useState({})
+  const [modal, setModal] = useState(false)
+  const [modalInfo, setModalInfo] = useState({
+    heading: '',
+    description: ''
+  })
 
   return (
     <DataContext.Provider
@@ -15,8 +19,10 @@ export const DataProvider = ({ children }) => {
         setMenu,
         city,
         setCity,
-        currentCity,
-        setCurrentCity
+        modal,
+        setModal,
+        modalInfo,
+        setModalInfo
       }}
     >
       {children}

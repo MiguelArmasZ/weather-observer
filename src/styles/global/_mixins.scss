@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin jumbo {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}

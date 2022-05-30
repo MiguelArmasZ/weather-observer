@@ -12,11 +12,6 @@ export const linksForNavbar = [
   {
     delay: { '--delay': '2.5' },
     to: '/',
-    text: 'recent'
-  },
-  {
-    delay: { '--delay': '3' },
-    to: '/',
     text: 'random'
   }
 ]

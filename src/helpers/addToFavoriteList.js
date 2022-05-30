@@ -9,30 +9,23 @@ export function addToFavoriteList(city) {
 
   const favoritesArr = getItemLS('favorites')
 
-  if (!favoritesArr) {
-    const favorites = [cityLower]
-    addItemLS('favorites', favorites)
+  const star = document.querySelector('.City-favorite')
+  star.classList.toggle('active')
+
+  if (!star.classList.contains('active')) {
+    star.classList.remove('show')
+  }
+  if (star.classList.contains('active')) {
+    star.classList.add('show')
   }
 
-  if (favoritesArr) {
-    const star = document.querySelector('.City-favorite')
-    star.classList.toggle('active')
+  const setArr = new Set([...favoritesArr, cityLower])
+  addItemLS('favorites', [...setArr])
 
-    if (!star.classList.contains('active')) {
-      star.classList.remove('show')
-    }
-    if (star.classList.contains('active')) {
-      star.classList.add('show')
-    }
-
-    const setArr = new Set([...favoritesArr, cityLower])
-    addItemLS('favorites', [...setArr])
-
-    if (favoritesArr.includes(cityLower)) {
-      const arrFiltered = favoritesArr.filter(
-        (item) => item !== cityLower
-      )
-      addItemLS('favorites', [...arrFiltered])
-    }
+  if (favoritesArr.includes(cityLower)) {
+    const arrFiltered = favoritesArr.filter(
+      (item) => item !== cityLower
+    )
+    addItemLS('favorites', [...arrFiltered])
   }
 }
