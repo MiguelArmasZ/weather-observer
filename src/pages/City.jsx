@@ -1,7 +1,7 @@
 /* eslint-disable space-before-function-paren */
 /* eslint-disable multiline-ternary */
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '../components/Icon'
 import { Spinner } from '../components/Spinner'
 import { conditionWeather } from '../data/conditionWeather'
@@ -14,13 +14,21 @@ import {
   faStar
 } from '@fortawesome/free-solid-svg-icons'
 import { activeSpinner } from '../helpers/activeSpinner'
-import { addActiveClass } from '../helpers/addActiveClass'
 import { intlClock } from '../helpers/intlClock'
+import { addToFavoriteList } from '../helpers/addToFavoriteList'
+import { checkFavoriteItem } from '../helpers/checkFavoriteItem'
 
 export const City = () => {
   const [time, setTime] = useState('')
+  const navigate = useNavigate()
+  const cityLS = window.localStorage.getItem('city') || false
+  const { city } = JSON.parse(cityLS)
 
-  const { city } = JSON.parse(window.localStorage.getItem('city'))
+  useEffect(() => {
+    if (!city) {
+      return navigate('/')
+    }
+  }, [])
 
   const place = useFetch(city)
   const {
@@ -47,6 +55,7 @@ export const City = () => {
   }, [timeZone])
 
   useEffect(() => {
+    checkFavoriteItem(city?.toLowerCase())
     activeSpinner()
   }, [])
 
@@ -77,9 +86,9 @@ export const City = () => {
               {region}, {country}
             </h3>
             <span
-              onClick={() =>
-                addActiveClass('.City-favorite', 'active')
-              }
+              onClick={() => {
+                addToFavoriteList(city)
+              }}
               className='City-favorite'
             >
               <Icon icon={faStar} />

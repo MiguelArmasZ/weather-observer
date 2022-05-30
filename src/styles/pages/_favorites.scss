@@ -5,18 +5,48 @@
 .Favorites-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: $dark;
-  padding: 5rem;
+  align-items: flex-start;
   height: 100%;
   max-height: 45rem;
   overflow-y: scroll;
   border-radius: $radius;
-  gap: 2rem;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0;
+  }
 }
 
 .Favorites-list-item {
   text-transform: capitalize;
   font-weight: bold;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  transition: all 0.5s;
+
+  &:nth-child(odd) {
+    background-color: lighten($black, 10);
+  }
+
+  &.hide {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+.Favorites-city {
+  cursor: pointer;
+  margin: 0;
+}
+
+.Favorites-star {
+  max-width: 2.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
 }
