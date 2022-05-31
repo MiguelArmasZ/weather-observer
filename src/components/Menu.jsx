@@ -48,7 +48,7 @@ export const Menu = () => {
           handleHideMenu()
           randomCity()
         }}
-        href='/city'
+        href='https://weather-observer.vercel.app/city'
         style={{ '--delay': '2.5' }}
         className='Navbar-link'
       >
