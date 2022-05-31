@@ -28,6 +28,8 @@ export const Menu = () => {
       'city',
       JSON.stringify({ city: randomPlace })
     )
+
+    window.location.reload()
   }
 
   return (
