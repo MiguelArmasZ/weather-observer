@@ -10,7 +10,7 @@ export const Form = () => {
   return (
     <form className='Form' onSubmit={handleSubmit}>
       <label className='Form-label' htmlFor='city'>
-        Busca una ciudad
+        Search for a city
       </label>
       <input
         onChange={handleChange}
@@ -23,7 +23,7 @@ export const Form = () => {
         value={city.city}
         required
       />
-      <button className='Form-submit'>buscar</button>
+      <button className='Form-submit'>search</button>
     </form>
   )
 }
