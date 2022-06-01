@@ -1,14 +1,14 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { DataProvider } from './DataContext'
 import { Routing } from './Routing'
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <DataProvider>
         <Routing />
       </DataProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

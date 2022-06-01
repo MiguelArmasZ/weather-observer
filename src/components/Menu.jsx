@@ -48,7 +48,7 @@ export const Menu = () => {
           handleHideMenu()
           randomCity()
         }}
-        to='/city'
+        to='city'
         style={{ '--delay': '2.5' }}
         className='Navbar-link'
       >

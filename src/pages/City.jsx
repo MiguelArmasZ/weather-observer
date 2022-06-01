@@ -21,7 +21,6 @@ export const City = () => {
   const navigate = useNavigate()
   const cityLS = window.localStorage.getItem('city') || false
   const { city } = JSON.parse(cityLS)
-
   const cityText = document.querySelector('.City-name')
 
   const place = useFetch(city)
