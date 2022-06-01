@@ -8,8 +8,7 @@ export const useCountries = () => {
       method: 'GET',
       headers: {
         'X-RapidAPI-Host': 'minicountries.p.rapidapi.com',
-        'X-RapidAPI-Key':
-          '413e2cd9c5msh98b578d19e601eap13a61ejsndcdb28254f7e'
+        'X-RapidAPI-Key': import.meta.env.VITE_RAPID_KEY
       }
     }
 
