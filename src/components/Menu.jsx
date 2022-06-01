@@ -28,8 +28,6 @@ export const Menu = () => {
       'city',
       JSON.stringify({ city: randomPlace })
     )
-
-    window.location.reload()
   }
 
   return (
@@ -45,17 +43,17 @@ export const Menu = () => {
           {link.text}
         </Link>
       ))}
-      <Link
+      <a
         onClick={() => {
           handleHideMenu()
           randomCity()
         }}
-        to='/city'
+        href='/city'
         style={{ '--delay': '2.5' }}
         className='Navbar-link'
       >
         random
-      </Link>
+      </a>
     </nav>
   )
 }
