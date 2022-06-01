@@ -18,8 +18,13 @@ export const Menu = () => {
     const randomNumber = Math.floor(Math.random() * countries.length)
     const randomCity = countries[randomNumber].capital_city[0]
 
-    if (randomCity === 'kyiv') {
-      randomPlace = 'madrid'
+    if (
+      randomCity === 'Hagåtña' ||
+      randomCity === 'kyiv' ||
+      randomCity === 'Ngerulmud' ||
+      randomCity === 'n'
+    ) {
+      randomPlace = 'pamplona'
     } else {
       randomPlace = randomCity
     }

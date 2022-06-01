@@ -17,18 +17,17 @@ export const Home = () => {
         </p>
         <Form />
         <div className='sun'></div>
-
-        <div className='mark'>
-          <p>Developed by</p>
-          <a
-            href='https://mikecode.dev'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <img src={Logo} alt='logo de mikecode.dev' />
-          </a>
-        </div>
       </section>
+      <div className='mark'>
+        <p>Developed by</p>
+        <a
+          href='https://mikecode.dev'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img src={Logo} alt='logo de mikecode.dev' />
+        </a>
+      </div>
     </>
   )
 }

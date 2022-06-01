@@ -97,19 +97,15 @@
 }
 
 .mark {
-  position: fixed;
+  position: absolute;
   display: flex;
   align-items: center;
   gap: 1rem;
-  bottom: 3rem;
+  bottom: -10rem;
   left: 0;
   right: 0;
   margin: auto;
   width: fit-content;
-
-  @include jumbo {
-    bottom: 20rem;
-  }
 
   p {
     font-size: 1.2rem;
