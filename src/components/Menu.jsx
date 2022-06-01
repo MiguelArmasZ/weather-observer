@@ -43,17 +43,17 @@ export const Menu = () => {
           {link.text}
         </Link>
       ))}
-      <a
+      <Link
         onClick={() => {
           handleHideMenu()
           randomCity()
         }}
-        href='/city'
+        to='/city'
         style={{ '--delay': '2.5' }}
         className='Navbar-link'
       >
         random
-      </a>
+      </Link>
     </nav>
   )
 }

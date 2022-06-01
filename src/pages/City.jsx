@@ -22,6 +22,8 @@ export const City = () => {
   const cityLS = window.localStorage.getItem('city') || false
   const { city } = JSON.parse(cityLS)
 
+  const cityText = document.querySelector('.City-name')
+
   const place = useFetch(city)
   const {
     country,
@@ -80,6 +82,12 @@ export const City = () => {
   }
 
   const { bgLayout, bgItems, dayMoment } = conditions
+
+  useEffect(() => {
+    if (cityText !== city && cityText !== null) {
+      window.location.reload()
+    }
+  }, [city])
 
   return (
     <>
